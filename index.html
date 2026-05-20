@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Paint - Registro de Clientes</title>
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --surface: #1e1e1e;
+            --primary: #ff007f; /* Fucsia Body Paint */
+            --text: #ffffff;
+            --text-muted: #aaaaaa;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: var(--surface);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255, 0, 127, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+        h2 { text-align: center; color: var(--primary); margin-top: 0; }
+        h3 { border-bottom: 1px solid var(--primary); padding-bottom: 5px; font-size: 1rem; color: var(--text-muted); }
+        .row { display: flex; gap: 15px; margin-bottom: 15px; }
+        .form-group { flex: 1; display: flex; flex-direction: column; }
+        label { font-size: 0.85rem; margin-bottom: 5px; color: var(--text-muted); }
+        input {
+            background: #2d2d2d;
+            border: 1px solid #444;
+            padding: 10px;
+            color: white;
+            border-radius: 4px;
+            outline: none;
+        }
+        input:focus { border-color: var(--primary); }
+        button {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+        button:hover { background-color: #e00070; }
+        .alert { padding: 10px; border-radius: 4px; margin-bottom: 15px; text-align: center; display: none; }
+        .alert.success { background-color: #2e7d32; color: white; }
+        .alert.error { background-color: #c62828; color: white; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Body Paint - Registro</h2>
+    <div id="alertBox" class="alert"></div>
+    
+    <form id="formRegistro">
+        <h3>Datos Personales</h3>
+        <div class="row">
+            <div class="form-group">
+                <label>DNI *</label>
+                <input type="text" id="dni" required>
+            </div>
+            <div class="form-group">
+                <label>Email *</label>
+                <input type="email" id="email" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label>Nombre *</label>
+                <input type="text" id="nombre" required>
+            </div>
+            <div class="form-group">
+                <label>Apellido</label>
+                <input type="text" id="apellido">
+            </div>
+        </div>
+
+        <h3>Dirección de Envío por Defecto</h3>
+        <div class="row">
+            <div class="form-group">
+                <label>País *</label>
+                <input type="text" id="pais" required>
+            </div>
+            <div class="form-group">
+                <label>Provincia *</label>
+                <input type="text" id="provincia" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label>Localidad *</label>
+                <input type="text" id="localidad" required>
+            </div>
+            <div class="form-group">
+                <label>Calle *</label>
+                <input type="text" id="calle" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label>Número *</label>
+                <input type="text" id="numero" required>
+            </div>
+            <div class="form-group">
+                <label>Piso</label>
+                <input type="text" id="piso">
+            </div>
+            <div class="form-group">
+                <label>Depto</label>
+                <input type="text" id="depto">
+            </div>
+        </div>
+
+        <button type="submit">Registrar Cliente</button>
+    </form>
+</div>
+
+<script type="module" src="interfaz.js"></script>
+</body>
+</html>
