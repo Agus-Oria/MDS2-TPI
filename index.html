@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Body Paint | Catalogo</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">Body Paint</p>
+      <h1>Articulos para body painting</h1>
+    </div>
+    <button class="cart-pill" type="button" aria-label="Ver carrito">
+      <span>Carrito</span>
+      <strong id="cart-count">0</strong>
+    </button>
+  </header>
+
+  <main class="shop-layout">
+    <section class="catalog-panel" aria-label="Catalogo">
+      <div class="toolbar">
+        <div class="tabs" role="tablist" aria-label="Secciones del catalogo">
+          <button class="tab active" type="button" data-filter="products">Productos</button>
+          <button class="tab" type="button" data-filter="kits">Kits</button>
+          <button class="tab" type="button" data-filter="all">Todo</button>
+        </div>
+        <label class="search">
+          <span>Buscar</span>
+          <input id="search-input" type="search" placeholder="Pintura, pincel o kit">
+        </label>
+      </div>
+
+      <div id="catalog-grid" class="catalog-grid" aria-live="polite"></div>
+    </section>
+
+    <aside id="cart-panel" class="cart-panel" aria-label="Carrito de compras">
+      <div class="cart-heading">
+        <div>
+          <p class="eyebrow">Pedido</p>
+          <h2>Tu carrito</h2>
+        </div>
+        <button id="clear-cart" class="ghost-button" type="button">Vaciar</button>
+      </div>
+
+      <div id="cart-items" class="cart-items"></div>
+
+      <div class="cart-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="cart-subtotal">$0</strong>
+        </div>
+        <div class="summary-row">
+          <span>Envio</span>
+          <strong id="shipping-cost">$0</strong>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <strong id="cart-total">$0</strong>
+        </div>
+        <button id="checkout-button" class="checkout-button" type="button" disabled>Confirmar pedido</button>
+        <p id="checkout-message" class="checkout-message" aria-live="polite"></p>
+      </div>
+    </aside>
+  </main>
+
+  <script src="catalogo.js"></script>
+  <script src="carrito.js"></script>
+  <script src="catalogo-vista.js"></script>
+  <script src="carrito-vista.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
